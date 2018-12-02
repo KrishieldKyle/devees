@@ -1,4 +1,5 @@
-module.exports = {
-    mongoURI: 'mongodb://krishield:krishieldkyle17@ds115664.mlab.com:15664/krishield-mongo',
-    secretOrKey: 'Secret'
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys_prod');
+} else {
+    module.exports = require('./keys_dev');
 }
